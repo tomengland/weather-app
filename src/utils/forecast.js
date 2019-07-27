@@ -11,8 +11,10 @@ const forecast = (latitude, longitude, callback) => {
         } else {
             const temperature = body.currently.temperature
             const precipitation = body.currently.precipProbability
+            const humidity = body.currently.humidity
+            const windSpeed = body.currently.windSpeed
         
-            callback(undefined,body.daily.data[0].summary + ' It is currently ' + temperature + ' degrees out.  There is a ' + precipitation + '% chance of rain.')
+            callback(undefined,body.daily.data[0].summary + ' It is currently ' + temperature + ' degrees out.  There is a ' + precipitation + '% chance of rain. ' + 'The humidity is ' + humidity + '%. The wind speed is ' + windSpeed + ' mph.')
         }
     })
 }
